@@ -17,3 +17,9 @@ def setup():
     p = l[2:]
     p.sort()
     connections[l[0]] = p
+
+def verifyInput(p):
+  if p in locations.keys():
+    return True
+  else:
+    return False
