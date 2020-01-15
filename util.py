@@ -1,12 +1,19 @@
+import math
+
 # declare dictionaries
 connections = {}
 locations = {}
 
 def setup():
+  # read contents from "locations.txt" into a dictionary
+  location = open("locations.txt").read().split("\n")
+  for line in location:
+    location = line.split(" ")
+    locations[location[0]] = location[1:]
+    
   # read contents of "connections.txt" into dictionary
-  c = open("connections.txt").read().split("\n")
-  for line in c:
+  for line in open("connections.txt").read().split("\n"):
     l = line.split(" ")
-    connections[l[0]] = l[2:]
-
-  print(connections)
+    p = l[2:]
+    p.sort()
+    connections[l[0]] = p
