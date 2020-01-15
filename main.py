@@ -1,21 +1,12 @@
-import math
+import util as util
 
-# declare dictionaries
-connections = {}
-locations = {}
+# import/parse location and connection file contents
+util.setup()
 
-# read contents from "locations.txt" into a dictionary
-location = open("locations.txt").read().split("\n")
-for line in location:
-  location = line.split(" ")
-  locations[location[0]] = location[1:]
-  
-# read contents of "connections.txt" into dictionary
-c = open("connections.txt").read().split("\n")
-for line in c:
-  l = line.split(" ")
-  connections[l[0]] = l[2:]
-      
-print(locations)
-print("\n")
-print(connections)
+# TODO: prompt user for input
+# test input
+start = "B2"
+end   = "E4"
+
+# do DFS to find path from start to end
+
