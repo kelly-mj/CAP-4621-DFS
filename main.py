@@ -4,9 +4,10 @@ import math
 util.setup()
 
 # TODO: prompt user for input
+
 # test input
-start = "A1"
-end   = "G1"
+start = input("What is the starting city? ")
+end   = input("\nWhat is the ending city? ")
 
 # do DFS to find path from start to end
 path = [start]
@@ -50,7 +51,8 @@ for i in range(0, len(path)-1):
       
       #calculates distane
       distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
+      print(path[i] + " to " + path[i+1] + " length " + "%.2f" %distance)
       distances.append(distance)
       sum = sum + distance
 
-print(sum)
+print("Total path length %.2f"  %sum)
