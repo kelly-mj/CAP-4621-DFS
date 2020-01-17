@@ -28,25 +28,29 @@ while(path[-1] != end):
   if change == 0:
     path.pop()
 
+#outside of for loop in order to be unchanging with each loop
+sum=0
+#you need to run through the path path.length()-1 times
 for i in range(0, len(path)-1):
+      #reinitializes the array each time it loops.
       points = []
+      
+      #gets the first element in the pair
       for value in util.locations[path[i]]:
             points.append(value)
+      #gets the second element in the pair
       for value in util.locations[path[i+1]]:
             points.append(value)
+      
+      #assigns the corresponding variable
       x1 = int(points[0])
       x2 = int(points[2])
       y1 = int(points[1])
       y2 = int(points[3])
+      
+      #calculates distane
       distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
       distances.append(distance)
-      #print(points)
-#print(distances)
-sum = 0
-for i in distances:
-      sum = sum + i
-      
+      sum = sum + distance
+
 print(sum)
-            
-            
-#print(path)
