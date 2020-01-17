@@ -12,7 +12,6 @@ end   = input("\nWhat is the ending city? ")
 # do DFS to find path from start to end
 path = [start]
 visited = [start]
-distances = []
 
 while(path[-1] != end):
   change = 0  # flag to indicate whether any unvisited neighbors were found
@@ -49,10 +48,9 @@ for i in range(0, len(path)-1):
       y1 = int(points[1])
       y2 = int(points[3])
       
-      #calculates distane
+      #calculates distance
       distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
       print(path[i] + " to " + path[i+1] + " length " + "%.2f" %distance)
-      distances.append(distance)
       sum = sum + distance
 
 print("Total path length %.2f"  %sum)
