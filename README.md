@@ -8,4 +8,8 @@ The “locations” file includes the names of the locations and their x and y p
 
 The “connections” file includes how the locations are connected. 
 
+* Class: CAP 4621 Intro to AI
+* Authors: Kelly Johnston & Philip Chang
+* Compile: python3 main.py
+
 **Class Project**
