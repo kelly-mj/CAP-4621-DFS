@@ -1,5 +1,3 @@
-import math
-
 # declare dictionaries
 connections = {}
 locations = {}
