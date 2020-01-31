@@ -39,16 +39,17 @@ while(temp!= ""):
             skip.append(temp)
             temp = input("What other city would you like to skip?\n")
       else:
-            temp = input("That city is not in the list.\nPlease input another city or leave it blank if you want to stop")
+            temp = input("That city is not in the list.\nPlease input another city or leave it blank if you want to stop\n")
 
+for i in skip:
+      print(i)
+      
 stepBystep = False
 temp = input("Do you want the instructions step-by-step? (y/n)\n")
 if(temp == "Y" or temp == "y"):
       stepBystep = True;
-      
-      
-for i in temp:
-      print(i)
+
+
 # do DFS to find path from start to end
 path = [start]
 visited = [start]
