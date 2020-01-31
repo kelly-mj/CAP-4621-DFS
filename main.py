@@ -1,5 +1,8 @@
 import util as util
 import math
+import time
+
+#start_time = time.time()
 
 # import/parse location and connection file contents
 util.setup()
@@ -17,6 +20,35 @@ while(util.verifyInput(temp)!=True):
       temp = input("What is the ending city? ")
 end = temp
 
+skip = []
+temp = input("\nAre there any cities that you would not want to visit? Please enter \"Help\" if you would like to see a list of cities. Or refer to the \"locations.txt\" file.\n")
+while(temp == "Help"):
+      for i in util.locations:
+            if(i != "END"):
+                  print(i)
+      temp = input("What city would you like to skip?\n")
+      while(temp!= ""):
+            if(temp in util.locations):
+                  skip.append(temp)
+                  temp = input("What other city would you like to skip?\n")
+            else:
+                  temp = input("That city is not in the list.\nPlease input another city or leave it blank if you want to stop\n")
+
+while(temp!= ""):
+      if(temp in util.locations):
+            skip.append(temp)
+            temp = input("What other city would you like to skip?\n")
+      else:
+            temp = input("That city is not in the list.\nPlease input another city or leave it blank if you want to stop")
+
+stepBystep = False
+temp = input("Do you want the instructions step-by-step? (y/n)\n")
+if(temp == "Y" or temp == "y"):
+      stepBystep = True;
+      
+      
+for i in temp:
+      print(i)
 # do DFS to find path from start to end
 path = [start]
 visited = [start]
@@ -62,3 +94,4 @@ for i in range(0, len(path)-1):
       sum = sum + distance
 
 print("Total path length %.2f"  %sum)
+#print("--- %s seconds ---" % (time.time() - start_time))
